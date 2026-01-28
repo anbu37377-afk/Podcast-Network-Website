@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff7ef"/>
+      <stop offset="1" stop-color="#eaf4ff"/>
+    </linearGradient>
+    <linearGradient id="headphones" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1a365d"/>
+      <stop offset="1" stop-color="#2bb7a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="650" fill="url(#bg2)"/>
+  <rect x="120" y="120" width="660" height="410" rx="36" fill="#ffffff"/>
+  <path d="M250 360 C250 240 350 170 450 170 C550 170 650 240 650 360" stroke="url(#headphones)" stroke-width="22" fill="none" stroke-linecap="round"/>
+  <rect x="210" y="330" width="90" height="140" rx="30" fill="#1a365d"/>
+  <rect x="600" y="330" width="90" height="140" rx="30" fill="#1a365d"/>
+  <rect x="410" y="270" width="80" height="160" rx="20" fill="#ff7a5c"/>
+  <path d="M380 430 L520 430" stroke="#1a365d" stroke-width="10" stroke-linecap="round"/>
+  <path d="M320 470 L360 450 L400 470 L440 450 L480 470 L520 450 L560 470" stroke="#2bb7a0" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="180" cy="170" r="40" fill="#ff7a5c" opacity="0.2"/>
+  <circle cx="720" cy="190" r="60" fill="#2bb7a0" opacity="0.15"/>
+</svg>
