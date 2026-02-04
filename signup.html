@@ -20,7 +20,7 @@
   </header>
   <main class="auth-shell">
     <div class="auth-center">
-      <div class="auth-card">
+      <div class="auth-card compact">
         <div class="auth-brand-in-card">
           <a class="brand" href="index.html">
             <span class="brand-mark">EG</span>
@@ -38,6 +38,13 @@
           <label for="signup-password">Password</label>
           <input id="signup-password" type="password" name="password" autocomplete="new-password"
             placeholder="Create a password" required />
+          <div class="auth-options">
+            <label class="checkbox-label">
+              <input type="checkbox" name="terms" id="agree-terms" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="#" class="terms-link">Terms & Conditions</a>
+            </label>
+          </div>
           <button class="btn btn-primary" type="submit">Create Account</button>
         </form>
         <div class="divider"><span>OR</span></div>

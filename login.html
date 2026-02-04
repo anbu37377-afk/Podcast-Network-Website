@@ -20,7 +20,7 @@
   </header>
   <main class="auth-shell">
     <div class="auth-center">
-      <div class="auth-card">
+      <div class="auth-card compact">
         <div class="auth-brand-in-card">
           <a class="brand" href="index.html">
             <span class="brand-mark">EG</span>
@@ -36,15 +36,20 @@
           <label for="login-password">Password</label>
           <input id="login-password" type="password" name="password" autocomplete="current-password"
             placeholder="Enter your password" required />
+          <div class="auth-options">
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember" id="remember-me">
+              <span class="checkmark"></span>
+              Remember me
+            </label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
           <button class="btn btn-primary" type="submit">Login</button>
         </form>
         <div class="divider"><span>OR</span></div>
         <div class="social">
           <button class="btn btn-outline" type="button">Login with Google</button>
           <button class="btn btn-outline" type="button">Login with Facebook</button>
-        </div>
-        <div class="auth-meta">
-          <a href="#">Forgot password?</a>
         </div>
         <p class="auth-switch">New here? <a href="signup.html">Create account</a></p>
       </div>
