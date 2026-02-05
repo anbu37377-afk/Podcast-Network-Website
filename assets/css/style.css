@@ -421,6 +421,12 @@ main .btn {
   flex-wrap: wrap;
   margin-bottom: 18px;
   justify-content: center;
+  gap: 16px;
+}
+
+.hero-actions .btn,
+.cta-actions .btn {
+  margin: 0;
 }
 
 .badge {
@@ -820,8 +826,10 @@ textarea {
 }
 
 .blog-card .btn {
-  align-self: center;
+  align-self: flex-start;
   margin-top: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .blog-card .meta {
@@ -1046,9 +1054,10 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 8px 0;
+  margin: 12px 0;
   flex-wrap: nowrap;
-  gap: 8px;
+  gap: 10px;
+  width: 100%;
 }
 
 .checkbox-label {
@@ -1480,6 +1489,11 @@ textarea {
     justify-content: center;
   }
 
+  .hero-actions .btn-outline,
+  .cta-actions .btn-outline {
+    display: none;
+  }
+
   .cta-banner .btn {
     justify-self: center;
   }
@@ -1517,6 +1531,13 @@ textarea {
 
   .plan-meta {
     grid-template-columns: 1fr;
+  }
+
+  .auth-options {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
   }
 }
 
@@ -3777,6 +3798,13 @@ textarea {
 
   .auth-switch {
     font-size: 0.85rem;
+  }
+
+  /* Fix for stats overflow on mobile */
+  .hero-stats,
+  .creator-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
