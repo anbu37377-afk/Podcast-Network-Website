@@ -792,3 +792,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Pricing Tab Switcher
+document.addEventListener("DOMContentLoaded", () => {
+  const tabBtns = document.querySelectorAll(".pricing-tab-btn");
+  const tabContents = document.querySelectorAll(".pricing-tab-content");
+
+  if (tabBtns.length) {
+    tabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.dataset.pricingTab;
+
+        // Update buttons
+        tabBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Update content
+        tabContents.forEach((content) => {
+          if (content.id === `${target}-plans`) {
+            content.classList.add("active");
+          } else {
+            content.classList.remove("active");
+          }
+        });
+      });
+    });
+  }
+});

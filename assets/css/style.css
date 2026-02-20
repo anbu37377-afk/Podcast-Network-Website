@@ -85,6 +85,12 @@ body {
   transform: translateX(0) scale(1);
 }
 
+@media (max-width: 600px) {
+  .reveal {
+    transform: translateY(20px) scale(0.98);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   .reveal,
@@ -256,7 +262,8 @@ header {
   text-decoration: none;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary);
 }
 
@@ -498,7 +505,7 @@ main .btn {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 24px;
+  gap: 32px;
 }
 
 .card {
@@ -675,9 +682,10 @@ textarea {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
   align-items: stretch;
+  justify-content: center;
 }
 
 .price-card {
@@ -688,6 +696,15 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
+}
+
+.price-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 4px;
 }
 
 .price-card>.btn {
@@ -705,11 +722,12 @@ textarea {
   justify-content: space-between;
   gap: 16px;
   align-items: flex-start;
+  min-height: 90px;
 }
 
 .plan-header>div {
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .plan-tagline {
@@ -727,8 +745,9 @@ textarea {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   background: var(--bg-alt);
-  padding: 12px;
+  padding: 16px;
   border-radius: 12px;
+  min-height: 110px;
 }
 
 .plan-meta h4 {
@@ -1217,6 +1236,17 @@ textarea {
   justify-self: center;
 }
 
+.cta-banner .btn-outline {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.cta-banner .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
 @media (max-width: 1100px) {
   .nav {
     justify-content: flex-start;
@@ -1228,10 +1258,9 @@ textarea {
     order: 1;
     margin-right: 8px;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     flex: 1;
+    font-size: 1.15rem;
+    gap: 8px;
   }
 
   .nav-actions {
@@ -1302,6 +1331,7 @@ textarea {
   .nav-actions {
     margin-left: auto;
     display: flex;
+    align-items: center;
     gap: 12px;
   }
 
@@ -1315,10 +1345,12 @@ textarea {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
+    width: auto;
+    height: 44px;
+    padding: 0 16px;
     background: var(--primary);
     color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
@@ -1453,31 +1485,29 @@ textarea {
     position: relative;
     gap: 12px;
     flex-wrap: nowrap;
+    align-items: center;
   }
 
   .nav .brand {
-    max-width: calc(100% - 120px);
+    max-width: none;
     flex-wrap: nowrap;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .nav .brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 0.9rem;
   }
 
   .nav-actions {
+    display: flex;
+    align-items: center;
     gap: 12px;
     padding-right: 10px;
-    /* Ensure space from edge */
-  }
-
-  .nav-actions .btn {
-    display: none;
-  }
-
-  .nav-actions {
-    gap: 12px;
-    padding-right: 10px;
-    /* Ensure space from edge */
   }
 
   .nav-actions .btn {
@@ -1527,10 +1557,29 @@ textarea {
 
   .plan-header {
     flex-direction: column;
+    gap: 8px;
+  }
+
+  .price-card {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .price-card img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 12px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
   }
 
   .plan-meta {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .auth-options {
@@ -1971,9 +2020,7 @@ textarea {
   justify-content: center;
 }
 
-.auth-brand-in-card .brand-mark {
-  /* Uses standardized mark size from .brand-mark */
-}
+
 
 .auth-card h1 {
   text-align: center;
@@ -2076,6 +2123,61 @@ textarea {
 .pricing-hero-content {
   max-width: 800px;
   margin: 0 auto;
+}
+
+/* Pricing Toggle Tabs */
+.pricing-tabs-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.pricing-tabs {
+  display: flex;
+  background: var(--bg-alt);
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-tab-btn {
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 1rem;
+}
+
+.pricing-tab-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 122, 92, 0.3);
+}
+
+.pricing-tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.pricing-tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pricing-hero h1 {
@@ -3006,7 +3108,7 @@ textarea {
 
 .stat-item {
   text-align: center;
-  padding: 20px;
+  padding: 32px 24px;
   background: var(--card);
   border-radius: 16px;
   box-shadow: var(--shadow);
@@ -3855,7 +3957,8 @@ textarea {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -3941,5 +4044,16 @@ textarea {
   /* Fixed visibility for nav-links on really small screens */
   .nav-links {
     z-index: 200000 !important;
+  }
+}
+
+/* Desktop Sidebar Height Fix */
+@media (min-width: 1101px) {
+  .dashboard-sidebar {
+    height: 100vh !important;
+    position: sticky !important;
+    top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 }
