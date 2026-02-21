@@ -5,12 +5,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EchoGrid Network | Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-        /* Dashboard Sidebar Visibility Fix */
+        /* Dashboard Sidebar Desktop Height Fix */
         .dashboard-sidebar {
             background-color: #1a1a1a !important;
             color: rgba(255, 255, 255, 0.9) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            min-height: 100vh !important;
+        }
+
+        @media (min-width: 1101px) {
+            .dashboard-layout {
+                display: grid !important;
+                grid-template-columns: 260px 1fr !important;
+                min-height: 100vh !important;
+                align-items: stretch !important;
+            }
+
+            .dashboard-sidebar {
+                position: sticky !important;
+                top: 0 !important;
+                height: 100vh !important;
+                z-index: 1000 !important;
+                overflow-y: auto !important;
+            }
         }
 
         .dashboard-sidebar .brand {
@@ -509,7 +530,7 @@
 </head>
 
 <body>
-    <div class="dashboard-layout" style="overflow-x: hidden;">
+    <div class="dashboard-layout">
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
             <div class="sidebar-header">
@@ -555,7 +576,7 @@
                     <div class="nav-actions">
                         <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
                         <div class="user-profile">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64"
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64"
                                 alt="User" />
                         </div>
                     </div>
@@ -571,7 +592,7 @@
                     </div>
                     <div class="welcome-right">
                         <div class="user-info">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64"
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64"
                                 alt="User" class="user-avatar" />
                             <div class="user-details">
                                 <span class="user-name">John Creator</span>
@@ -656,7 +677,7 @@
                         <div class="episodes-list">
                             <div class="episode-item">
                                 <div class="episode-cover">
-                                    <img src="https://images.unsplash.com/photo-1478737270239-2fccd2c7862a?auto=format&fit=crop&w=100&q=80"
+                                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=100&q=80"
                                         alt="Episode cover" />
                                 </div>
                                 <div class="episode-info">
@@ -675,7 +696,7 @@
                             </div>
                             <div class="episode-item">
                                 <div class="episode-cover">
-                                    <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&w=100&q=80"
+                                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=100&q=80"
                                         alt="Episode cover" />
                                 </div>
                                 <div class="episode-info">
@@ -694,7 +715,7 @@
                             </div>
                             <div class="episode-item">
                                 <div class="episode-cover">
-                                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=100&q=80"
+                                    <img src="https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?auto=format&fit=crop&w=100&q=80"
                                         alt="Episode cover" />
                                 </div>
                                 <div class="episode-info">
