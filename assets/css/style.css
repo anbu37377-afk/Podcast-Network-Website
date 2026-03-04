@@ -176,7 +176,7 @@ ul {
 
 .hero-card img {
   width: 100%;
-  max-height: 450px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
 }
 
@@ -208,7 +208,6 @@ header {
   justify-content: space-between;
   padding: 18px 0;
   gap: 12px;
-  width: 100%;
   flex-wrap: nowrap;
 }
 
@@ -446,7 +445,7 @@ main .btn {
 
 .media-cover {
   width: 100%;
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   max-width: 100%;
 }
@@ -631,7 +630,7 @@ main .btn {
 
 .form-card img {
   width: 100%;
-  max-height: 300px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 16px;
   margin-bottom: 8px;
@@ -686,6 +685,12 @@ textarea {
   gap: 32px;
   align-items: stretch;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid .price-card:nth-child(4):last-child {
+    grid-column: 2;
+  }
 }
 
 .price-card {
@@ -889,6 +894,9 @@ textarea {
 }
 
 .blog-featured {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: var(--radius);
 }
 
@@ -1566,7 +1574,7 @@ textarea {
   }
 
   .price-card img {
-    height: 180px;
+    height: auto;
     width: 100%;
     object-fit: cover;
     margin-bottom: 12px;
@@ -1912,7 +1920,8 @@ textarea {
 
 .episode-image {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16 / 10;
+  height: auto;
   object-fit: cover;
 }
 
@@ -2387,7 +2396,7 @@ textarea {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius) var(--radius) 0 0;
-  height: 200px;
+  aspect-ratio: 16 / 10;
 }
 
 .blog-image-wrapper img {
@@ -3008,7 +3017,7 @@ textarea {
 
 .card-face img {
   width: 100%;
-  height: 400px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
 }
@@ -3213,7 +3222,7 @@ textarea {
 
 .creator-card-3d .card-face img {
   width: 100%;
-  height: 400px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
 }
@@ -3373,7 +3382,7 @@ textarea {
   }
 
   .creator-card-3d .card-face img {
-    height: 250px;
+    height: auto;
   }
 
   .revenue-stats {
@@ -3477,7 +3486,7 @@ textarea {
 
 .showcase-main img {
   width: 100%;
-  height: 400px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
 }
@@ -3754,11 +3763,11 @@ textarea {
   }
 
   .showcase-main img {
-    height: 300px;
+    height: auto;
   }
 
   .card-face img {
-    height: 250px;
+    height: auto;
   }
 }
 
