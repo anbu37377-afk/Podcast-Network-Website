@@ -450,6 +450,16 @@ main .btn {
   max-width: 100%;
 }
 
+.circle-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50% !important;
+  margin: 0 auto 20px;
+  border: 4px solid var(--border);
+  object-fit: cover;
+  display: block;
+}
+
 .cover-square {
   aspect-ratio: 1 / 1;
 }
@@ -663,6 +673,17 @@ textarea {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 32px;
   align-items: center;
+}
+
+.visual-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.visual-stack .stack-img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .stats {
@@ -3919,13 +3940,14 @@ textarea {
   }
 }
 
-.nav-dashboard .nav-actions {
-  grid-column: 3;
-  justify-self: end;
+.nav-dashboard {
+  justify-content: flex-end !important;
 }
 
-.nav-dashboard .dashboard-toggle-btn {
-  grid-column: 1;
+.nav-dashboard .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 @media (max-width: 700px) {
