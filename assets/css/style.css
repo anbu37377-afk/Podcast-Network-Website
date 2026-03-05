@@ -3946,7 +3946,7 @@ textarea {
     display: flex !important;
     justify-content: space-between !important;
     width: 100%;
-    padding: 0 15px;
+    padding: 15px;
   }
 
   .nav-dashboard .nav-actions {
