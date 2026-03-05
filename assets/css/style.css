@@ -3940,21 +3940,33 @@ textarea {
   }
 }
 
-.nav-dashboard {
-  justify-content: flex-end !important;
-}
+/* Dashboard Navigation Fix for Mobile/Tab */
+@media (max-width: 1100px) {
+  .nav-dashboard {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100%;
+    padding: 0 15px;
+  }
 
-.nav-dashboard .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  .nav-dashboard .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .dashboard-toggle-btn {
+    margin-left: auto !important;
+  }
 }
 
 @media (max-width: 700px) {
   .nav-dashboard {
-    grid-template-columns: auto 1fr auto;
-    gap: 12px;
+    display: flex !important;
+    justify-content: space-between !important;
     width: 100%;
+    gap: 12px;
     box-sizing: border-box;
   }
 
